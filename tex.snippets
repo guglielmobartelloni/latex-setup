@@ -136,5 +136,26 @@ snippet delta "Appartiene" Ai
 $\varDelta$
 endsnippet
 
+snippet restrict "restrizione" Ai
+${1:f}_\{\mkern 1mu \\vrule height 2ex\\mkern2mu [${2:x_\{i-1\},x_i}]\}$0
+endsnippet
 
+snippet ,, "a n" Ai
+,...,n
+endsnippet
+
+snippet __ "sotto" Ai
+_\{${1}\}${0}
+endsnippet
+
+snippet ccc "sotto" Ai
+  \\begin\{equation\}
+    ${1:f(x)}=
+    \\begin\{cases\}
+      ${2:1}, & \\text{se\}\ ${3} \\\\
+      ${4:0}, & \text\{se\}\ ${5}
+    \\end\{cases\}
+  \\end\{equation\}
+$0
+endsnippet
 
