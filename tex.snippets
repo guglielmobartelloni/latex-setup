@@ -1,3 +1,4 @@
+
 snippet beg "begin{} / end{}" bA
 \begin{$1}
 	$0
@@ -35,16 +36,16 @@ snippet / "Fraction" iA
 endsnippet
 
 snippet $ "Math" iA
-$${VISUAL}$
+$$1$ $0
 endsnippet
 
 priority 10
-snippet "segn" "bar" riA
+snippet "segnato" "bar" riA
 \overline{$1}$0
 endsnippet
 
 priority 100
-snippet "([a-zA-Z])segn" "bar" riA
+snippet "([a-zA-Z])segnato" "bar" riA
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
 
@@ -86,20 +87,20 @@ snippet PP "forall" iA
 \forall 
 endsnippet
 
-snippet xii "xi" iA
-x_{i}
-endsnippet
-
-snippet xi+ "xi" iA
-x_{i+1}
-endsnippet
-
-snippet xi- "xi" iA
-x_{i-1}
-endsnippet
-
 snippet xjj "xj" iA
 x_{j}
+endsnippet
+
+snippet '([A-Za-z])(ii)' "auto subscript" wrA
+`!p snip.rv = match.group(1)`_{i}
+endsnippet
+
+snippet '([A-Za-z])(i\+)' "auto subscript" wrA
+`!p snip.rv = match.group(1)`_{i+1}
+endsnippet
+
+snippet '([A-Za-z])(i-)' "auto subscript" wrA
+`!p snip.rv = match.group(1)`_{i-1}
 endsnippet
 
 snippet enum "Enumerate" bA
@@ -148,7 +149,11 @@ snippet __ "sotto" Ai
 _\{${1}\}${0}
 endsnippet
 
-snippet ccc "sotto" Ai
+snippet tex "sotto" Ai
+\\textbf\{${1}\}$0
+endsnippet
+
+snippet ccc "condizioni" Ai
   \\begin\{equation\}
     ${1:f(x)}=
     \\begin\{cases\}
